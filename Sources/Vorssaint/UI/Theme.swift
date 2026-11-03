@@ -76,15 +76,21 @@ enum PanelSurface {
     }
 
     static func baseFill(for scheme: ColorScheme) -> Color {
-        scheme == .light ? Color.white.opacity(0.68) : Color.black.opacity(0.42)
+        scheme == .light
+            ? Color.white.opacity(0.82)
+            : Color(red: 0.018, green: 0.030, blue: 0.038).opacity(0.94)
     }
 
     static func cardFill(for scheme: ColorScheme) -> Color {
-        scheme == .light ? Color.white.opacity(0.38) : Color.white.opacity(0.075)
+        scheme == .light
+            ? Color.white.opacity(0.58)
+            : Color(red: 0.075, green: 0.105, blue: 0.12).opacity(0.88)
     }
 
     static func controlFill(for scheme: ColorScheme) -> Color {
-        scheme == .light ? Color.black.opacity(0.055) : Color.white.opacity(0.085)
+        scheme == .light
+            ? Color.black.opacity(0.045)
+            : Color(red: 0.12, green: 0.17, blue: 0.19).opacity(0.88)
     }
 
     /// Raised contrast is asked for by someone who cannot see a hairline at a
@@ -94,8 +100,8 @@ enum PanelSurface {
     static func border(for scheme: ColorScheme) -> Color {
         let raised = NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast
         return scheme == .light
-            ? Color.black.opacity(raised ? 0.24 : 0.09)
-            : Color.white.opacity(raised ? 0.28 : 0.11)
+            ? Color.black.opacity(raised ? 0.28 : 0.12)
+            : (raised ? Theme.brandCyan.opacity(0.48) : Theme.brandSilver.opacity(0.22))
     }
 
     /// A control that sits ON a glass surface rather than in it: the system's
@@ -108,8 +114,8 @@ enum PanelSurface {
     static func raisedBorder(for scheme: ColorScheme) -> Color {
         let raised = NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast
         return scheme == .light
-            ? Color.black.opacity(raised ? 0.22 : 0.07)
-            : Color.white.opacity(raised ? 0.32 : 0.16)
+            ? Color.black.opacity(raised ? 0.24 : 0.08)
+            : Theme.brandCyan.opacity(raised ? 0.42 : 0.22)
     }
 
     static func raisedShadow(for scheme: ColorScheme) -> Color {

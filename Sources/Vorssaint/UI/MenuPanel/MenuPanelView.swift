@@ -116,6 +116,7 @@ struct MenuPanelView: View {
                 navigablePanel
             }
         }
+        .tint(Theme.brandCyan)
         .onAppear {
             applyFocus(panelFocus.request)
             KeepAwakeManager.shared.refreshPasswordlessStatus()
