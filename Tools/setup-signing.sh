@@ -1,9 +1,9 @@
 #!/bin/zsh
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (C) 2026 XenoUtils
+# Copyright (C) 2026 Vorssaint
+# XenoUtils fork branding modifications (C) 2026
 
-# Creates a stable, self-signed code-signing identity named "XenoUtils Utils
-# Signing" in a dedicated keychain. build.sh uses it automatically, giving every
+# Creates a stable, self-signed code-signing identity named "XenoUtils Local Signing" in a dedicated keychain. build.sh uses it automatically, giving every
 # build the same code signature — so macOS keeps granted permissions
 # (Accessibility, Screen Recording) across updates instead of re-prompting.
 #
