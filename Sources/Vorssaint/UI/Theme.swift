@@ -235,8 +235,7 @@ func appDelegate() -> AppDelegate? {
     NSApp.delegate as? AppDelegate
 }
 
-/// The Xeno orb mascot (Resources/Brand/xeno-orb.svg, rasterized at build time),
-/// tintable for light or dark surfaces.
+/// The Xeno orb mascot (Resources/Brand/xeno-orb.svg, rasterized at build time).
 struct BrandMark: View {
     var width: CGFloat
     var tint: Color = Theme.brandCyan

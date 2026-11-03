@@ -2,15 +2,11 @@
 // Copyright (C) 2026 Vorssaint
 // XenoUtils fork branding modifications (C) 2026
 
-// Generates all icon assets:
-// - the app iconset and .icns from the exported Default rendition of the
-//   adaptive source (Resources/Brand/xeno-app-icon.svg)
-// - the menu bar template glyph and BrandMark from the wordmark master
-//   (Resources/Brand/xeno-orb.svg)
-// AppIcon-Default.png is a hand-exported twin of Resources/Brand/AppIcon.icon;
-// re-export it whenever the Icon Composer project changes. The build cannot read
-// .icon bundles directly: actool exists only inside full Xcode 26, and the
-// supported local floor is Command Line Tools alone.
+// Generates all XenoUtils icon assets:
+// - the app iconset and .icns from Resources/Brand/xeno-app-icon.svg
+// - the full-colour menu-bar orb and in-app BrandMark from xeno-orb.svg
+// The Icon Composer catalog uses the same app-icon master for Xcode 26+.
+// The generated .icns remains the fallback when actool is unavailable.
 import AppKit
 
 // Current macOS misreads PNG payloads in the legacy small chunks. It downsamples
@@ -115,15 +111,14 @@ func renderAppIcon(px: Int) -> Data? {
 
 // MARK: - Menu bar glyph (template)
 
-// The mark is ~1.97:1, so fitting it into a fixed box made the width the
-// limiting side and left the height unused, rendering it far shorter than the
-// menu bar icons around it. Size from the height and let the width follow.
+// The orb is square. Size it from the requested height and center it in the
+// wider menu-bar canvas so it reads clearly without crowding adjacent items.
 let menuBarGlyphHeight: CGFloat = 12.5
 // Centered geometrically the mark reads high, since the thin ring tails carry
 // the bounding box below the planet body. Drop it onto the same visual floor
 // as its neighbours.
 let menuBarGlyphDrop: CGFloat = 1
-// Taller than the mark needs: the same canvas holds the compact Keep Awake
+// Taller than the orb needs: the same canvas holds the compact Keep Awake
 // symbols. Keep in sync with BlackHoleGlyph.pointSize in
 // Sources/XenoUtils/App/StatusItemController.swift; `--selftest` enforces it.
 let menuBarCanvas = (width: 26, height: 20)

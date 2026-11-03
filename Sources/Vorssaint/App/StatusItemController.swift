@@ -879,9 +879,9 @@ final class StatusItemController {
     }
 }
 
-/// The official mark, bundled as a template image so the idle state adapts to
-/// light and dark menu bars. Active states can use real colors for attention.
-/// A system symbol named in the menu bar settings can take the mark's place.
+/// The Xeno orb is bundled in full colour for the idle menu-bar state.
+/// Active states may tint it to signal attention. A system symbol named in
+/// menu-bar settings can take the orb's place.
 enum BlackHoleGlyph {
     /// Logical size of the glyph in the menu bar, in points. Wide because the
     /// mark is ~1.97:1 and sized from its height. Tools/MakeIcon.swift writes
