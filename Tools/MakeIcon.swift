@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// Copyright (C) 2026 XenoUtils
+// Copyright (C) 2026 Vorssaint
+// XenoUtils fork branding modifications (C) 2026
 
 // Generates all icon assets:
 // - the app iconset and .icns from the exported Default rendition of the
