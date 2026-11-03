@@ -1,6 +1,6 @@
-# Contributing to Vorssaint
+# Contributing to XenoUtils
 
-Vorssaint aims to stay small, native and readable. Contributions are accepted
+XenoUtils aims to stay small, native and readable. Contributions are accepted
 under GPL-3.0-or-later unless stated otherwise.
 
 ## Getting started
@@ -11,17 +11,17 @@ dependencies. `Package.swift` supports editor indexing; it does not assemble or
 sign the app bundle.
 
 ```sh
-git clone https://github.com/vorssaint/vorssaint-utils.git
-cd vorssaint-utils
+git clone https://github.com/ChckaX2-slimshady/xeno-utils.git
+cd xeno-utils
 ./build.sh --dev
-./build/VorssaintDeveloper --selftest
+./build/XenoUtilsDeveloper --selftest
 ./build.sh --test
 ```
 
 To install and launch the separate Developer app, use `./build.sh --dev --install`.
-It has its own preferences and permissions and does not replace the official app.
+It has its own preferences and permissions and does not replace the upstream app.
 A plain `./build.sh` builds the optimized variant used by CI; its health check is
-`./build/Vorssaint --selftest`.
+`./build/XenoUtils --selftest`.
 
 ### Stable signing
 
@@ -41,7 +41,7 @@ direction in an issue. Explain the user need, required permissions, dependencies
 and ongoing maintenance. Prefer existing macOS capabilities and repository code
 over a new subsystem. Keep each PR focused on one independently useful change.
 
-- App lifecycle lives in `Sources/Vorssaint/App`, shared catalogs and preferences
+- App lifecycle lives in `Sources/XenoUtils/App`, shared catalogs and preferences
   in `Core`, behavior in `Services`, views in `UI`, and diagnostics in `Support`.
   Keep reusable decisions outside views where they can be tested.
 - Check other callers and the upgrade path when fixing shared behavior.
@@ -54,7 +54,7 @@ over a new subsystem. Keep each PR focused on one independently useful change.
   permission prompts where applicable, and coverage tests.
 - New source files retain the project's SPDX license and copyright headers.
 
-Sensor changes should include a dump from `./build/Vorssaint --sensors` and the
+Sensor changes should include a dump from `./build/XenoUtils --sensors` and the
 Mac model. Selection logic lives in `TemperatureSensorSelector` and `SystemMonitor`.
 
 ## Validation
