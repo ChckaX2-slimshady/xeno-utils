@@ -148,7 +148,7 @@ With [Homebrew](https://brew.sh):
 brew install --cask vorssaint
 ```
 
-Or grab the disk image from the [releases page](https://github.com/vorssaint/vorssaint-utils/releases) and drag XenoUtils into Applications.
+Or grab the disk image from the [releases page](https://github.com/ChckaX2-slimshady/xeno-utils/releases) and drag XenoUtils into Applications.
 
 Builds are signed with an Apple Developer ID and notarized, so macOS opens them without a fuss and your permissions survive updates.
 
