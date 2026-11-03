@@ -907,7 +907,8 @@ enum BlackHoleGlyph {
             image.addRepresentation(rep)
         }
         guard !image.representations.isEmpty else { return nil }
-        image.isTemplate = true
+        // Preserve the orb's cyan eyes and silver shell in the menu bar.
+        image.isTemplate = false
         return image
     }()
 

@@ -505,48 +505,23 @@ struct MenuPanelView: View {
 }
 
 private struct MenuPanelHeader: View {
-    @Environment(\.colorScheme) private var colorScheme
     @ObservedObject private var l10n = L10n.shared
-
     var body: some View {
-        ZStack {
-            BrandMark(width: 48, tint: markTint)
-                .frame(height: 28)
-                .accessibilityHidden(true)
-
-            if AppInfo.isBeta {
-                HStack {
-                    Text(l10n.s.betaBadgeLabel.uppercased())
-                        .font(.system(size: 9, weight: .bold))
-                        .padding(.horizontal, 6)
-                        .padding(.vertical, 2)
-                        .background(Color.orange.opacity(0.18))
-                        .foregroundStyle(.orange)
-                        .clipShape(Capsule())
-
-                    Spacer()
-
-                    Button {
-                        appDelegate()?.openFeedbackWindow()
-                    } label: {
-                        Image(systemName: "bubble.left.and.text.bubble.right")
-                            .font(.system(size: 11, weight: .medium))
-                            .foregroundStyle(.secondary)
-                            .padding(4)
-                            .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                    .help(FeatureStrings.feedback(l10n.language).openButton)
-                }
+        HStack(spacing: 10) {
+            BrandMark(width: 40).frame(height: 38).accessibilityHidden(true)
+            VStack(alignment: .leading, spacing: 2) {
+                Text("XenoUtils").font(.system(size: 14, weight: .semibold)).foregroundStyle(Theme.brandSilver)
+                Text("RECON  •  NEGOTIATE  •  DEPLOY  •  REPORT")
+                    .font(.system(size: 8.5, weight: .medium)).tracking(0.45)
+                    .foregroundStyle(Theme.brandCyan.opacity(0.92)).lineLimit(1).minimumScaleFactor(0.72)
             }
-        }
-        .frame(height: 28)
-        .padding(.vertical, 4)
-        .frame(maxWidth: .infinity)
-    }
-
-    private var markTint: Color {
-        colorScheme == .light ? Color(white: 0.03) : .white
+            Spacer(minLength: 0)
+            if AppInfo.isBeta {
+                Text(l10n.s.betaBadgeLabel.uppercased()).font(.system(size: 8, weight: .bold))
+                    .padding(.horizontal, 6).padding(.vertical, 2)
+                    .background(Theme.brandCyan.opacity(0.13)).foregroundStyle(Theme.brandCyan).clipShape(Capsule())
+            }
+        }.frame(height: 40).padding(.vertical, 3).frame(maxWidth: .infinity)
     }
 }
 

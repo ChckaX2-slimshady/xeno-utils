@@ -229,11 +229,10 @@ func appDelegate() -> AppDelegate? {
     NSApp.delegate as? AppDelegate
 }
 
-/// The official mark (Resources/Brand/logo.png, trimmed at build time),
+/// The Xeno orb mascot (Resources/Brand/xeno-orb.svg, rasterized at build time),
 /// tintable for light or dark surfaces.
 struct BrandMark: View {
     var width: CGFloat
-    var tint: Color = .white
 
     private static let mark: NSImage? = {
         guard let url = Bundle.main.url(forResource: "BrandMark", withExtension: "png") else { return nil }
@@ -243,12 +242,10 @@ struct BrandMark: View {
     var body: some View {
         if let mark = Self.mark {
             Image(nsImage: mark)
-                .renderingMode(.template)
                 .interpolation(.high)
                 .antialiased(true)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .foregroundStyle(tint)
                 .frame(width: width)
         } else {
             Image(systemName: "circle.fill")
