@@ -257,7 +257,7 @@ struct BrandMark: View {
             Image(systemName: "circle.fill")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .foregroundStyle(tint)
+                .foregroundStyle(Theme.brandCyan)
                 .frame(width: width * 0.5)
         }
     }
