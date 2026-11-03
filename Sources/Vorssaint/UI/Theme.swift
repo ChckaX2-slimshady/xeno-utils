@@ -239,6 +239,7 @@ func appDelegate() -> AppDelegate? {
 /// tintable for light or dark surfaces.
 struct BrandMark: View {
     var width: CGFloat
+    var tint: Color = Theme.brandCyan
 
     private static let mark: NSImage? = {
         guard let url = Bundle.main.url(forResource: "BrandMark", withExtension: "png") else { return nil }
