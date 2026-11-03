@@ -1,16 +1,9 @@
-# Trademarks
+# Trademarks and fork identity
 
-The source code in this repository is licensed under GPL-3.0-or-later. That
-license covers copyright in the source code only.
+XenoUtils is an independently branded fork of [vorssaint/vorssaint-utils](https://github.com/vorssaint/vorssaint-utils).
 
-The GPL license does not grant permission to use the Vorssaint name, logo, icon,
-bundle identity, trade dress, official branding, or any signing identity
-controlled by the project maintainer.
+The upstream source code is licensed under GPL-3.0-or-later. That license covers copyright in the source code only. Original copyright headers, license notices, and the complete GPL license are retained.
 
-Official Vorssaint builds are distributed only by the project maintainer.
-Unofficial forks and redistributed builds must use a different name, app icon,
-bundle identifier, signing identity, update feed, and any other branding that
-could imply endorsement or official status.
+This fork uses its own name, mascot artwork, icon, bundle identifier, application identity, and local signing identity. It is not an official Vorssaint build and is not endorsed by the upstream project or maintainer.
 
-Do not present a modified build as Vorssaint or as an official release unless
-you have explicit permission from the project maintainer.
+The Vorssaint name, logo, icon, bundle identity, trade dress, official branding, and signing identity remain the property of their respective owners. This fork does not claim or imply rights to those marks.

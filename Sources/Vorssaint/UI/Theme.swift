@@ -3,13 +3,19 @@
 
 import SwiftUI
 
-/// Shared look & feel: brand colors, card styling and the brand mark.
+/// Shared look & feel: XenoUtils graphite, glass and cyan identity tokens.
 enum Theme {
+    static let brandCyan = Color(red: 0.20, green: 0.84, blue: 0.92)
+    static let brandSilver = Color(red: 0.72, green: 0.79, blue: 0.83)
+    static let brandGraphite = Color(red: 0.035, green: 0.055, blue: 0.070)
+    static let glassSurface = Color.white.opacity(0.075)
+    static let glassRim = Color.white.opacity(0.16)
+
     /// Near-black background behind the brand mark. Neutral greys into black, no
     /// colour cast, with just a hint of depth so the badge does not read as flat.
     static let spaceGradient = LinearGradient(
-        colors: [Color(white: 0.10),
-                 Color(white: 0.04),
+        colors: [Color(red: 0.10, green: 0.14, blue: 0.16),
+                 Color(red: 0.045, green: 0.065, blue: 0.075),
                  Color.black],
         startPoint: .topLeading,
         endPoint: .bottomTrailing
